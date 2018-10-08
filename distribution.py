@@ -38,7 +38,7 @@ Notice about this example:
 """
 badd=input("enter string")
 badd=(badd.lower())
-print(badd)
+#print(badd)
 letlist=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 bignumlist=[0]*26
 #bignumlist[1]=1
@@ -46,8 +46,8 @@ newlist=['3a']*26
 for i in range(len(bignumlist)):
     bignumlist[i]=badd.count(letlist[i])
     newlist[i]=str(bignumlist[i])+letlist[i]
-    print(bignumlist[i])
-    print(letlist[i])
+    #print(bignumlist[i])
+    #print(letlist[i])
 
 newlist.sort(reverse=True)
 print(newlist)
