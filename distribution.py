@@ -40,18 +40,35 @@ badd=input("enter string")
 badd=(badd.lower())
 #print(badd)
 #letlist=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-#bignumlist=[0]*26
+bignumlist=[0]*26
 
 twoway=[('a',0),('b',0),('c',0),('d',0),('e',0),('f',0),('g',0),('h',0),('i',0),('j',0),('k',0),('l',0),('m',0),('n',0),('o',0),('p',0),('q',0),('r',0),('s',0),('t',0),('u',0),('v',0),('w',0),('x',0),('y',0),('z',0)]
+
+#for i in range(len(bignumlist)):
+    #twoway[(1,i)]=badd.count(twoway[0,i])
+    #newlist[i]=str(bignumlist[i])+letlist[i]
 print(twoway)
+
+from operator import itemgetter, attrgetter
+
+#s=sorted(student_tuples, key=itemgetter(1))  #first by name
+#unfortunately what this is doing is appending the first result to the second
+#instead of resorting
+s=sorted(twoway,key=itemgetter(0))  #secondary first col 0
+s=sorted(s, key=itemgetter(2), reverse=True)  #primary second- age
+
+s=(s,sorted(s, key=itemgetter(1), reverse=True))  #then by grade
+print(s)
+
+
+s = sorted(student_objects, key=attrgetter('age'))     
+sorted(s, key=attrgetter('grade'), reverse=True) 
+
+#print(twoway)
 """
 bignumlist[1]=1
 newlist=['3a']*26
-for i in range(len(bignumlist)):
-    bignumlist[i]=badd.count(letlist[i])
-    newlist[i]=str(bignumlist[i])+letlist[i]
-    print(bignumlist[i])
-    print(letlist[i])
+
 
 newlist.sort(reverse=True)
 print(newlist)
@@ -69,20 +86,7 @@ twoway=zip(letlist,bignumlist)
 twoway.sort(reverse=True)
 twowayset=set(twoway)
 
-from operator import itemgetter, attrgetter
 
-s=sorted(student_tuples, key=itemgetter(1))  #first by name
-unfortunately what this is doing is appending the first result to the second
-instead of resorting
-s=sorted(student_tuples,key=itemgetter(0))  #secondary first col 0
-s=sorted(s, key=itemgetter(2), reverse=True)  #primary second- age
-
-s=(s,sorted(s, key=itemgetter(1), reverse=True))  #then by grade
-print(s)
-
-
-s = sorted(student_objects, key=attrgetter('age'))     
-sorted(s, key=attrgetter('grade'), reverse=True)  
     
 
 twowayset.sort(key=itemgetter(1), reverse=True)
