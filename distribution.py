@@ -39,18 +39,18 @@ Notice about this example:
 import re
 import operator
 
-#stripping string down to only lower case letters
-badd=input("enter string")
-badd=(badd.lower())
-badd=re.sub('[^ a-zA-Z]', '', badd)
-badd=badd.replace(" ", "")
+#stripping input down to only lower case letters
+badd=input("Please enter a string of text (the bigger the better): ")
+badd1=(badd.lower())
+badd2=re.sub('[^ a-zA-Z]', '', badd1)
+badd3=badd2.replace(" ", "")
 
 
 letlist=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 letters={c:0 for c in letlist}
 
 #put amount of each letter into a dictionary
-for i in badd:
+for i in badd3:
     letters[i]+=1
 
 
@@ -61,10 +61,10 @@ let = sorted(letters.items(), key=operator.itemgetter(1),reverse=True)
 #turn the sorted list back into a dictionary
 d = dict(let)
 
-
+print('The distribution of characters in "'+badd+'" is: ')
 
 for key, value in d.items() :
     if value>0:
-        fin = key * value
-        print(fin)
+        print(key * value)
+        
 
