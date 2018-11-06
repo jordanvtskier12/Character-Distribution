@@ -42,51 +42,14 @@ badd=input("enter string")
 badd=(badd.lower())
 #print(badd)
 letlist=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-bignumlist=[0]*26
+letters={c:0 for c in letlist}
 
-for i in range(len(bignumlist)):
-    thelen=len(newlist[i])-1
-    tempstring=newlist[i]
-    thenum=tempstring[0:thelen]
-    thelet=tempstring[thelen]
-temp=[thelet]*thenum
-print(temp)
+for i in badd:
+    letters[i]+=1
+print(letters)
 
-twoway=zip(letlist,bignumlist)
-twoway.sort(reverse=True)
-twowayset=set(twoway)
-
-twowayset.sort(key=itemgetter(1), reverse=True)
-print(twowayset)
+for i in letters:
+    print(letlist[0])
+    del letlist[0]
 
 
-
-"""
-#twoway=[('a',0),('b',0),('c',0),('d',0),('e',0),('f',0),('g',0),('h',0),('i',0),('j',0),('k',0),('l',0),('m',0),('n',0),('o',0),('p',0),('q',0),('r',0),('s',0),('t',0),('u',0),('v',0),('w',0),('x',0),('y',0),('z',0)]
-#print(twoway)
-
-newlist=['3a']*2
-
-#for i in range(len(bignumlist)):
-    #twoway[(1,i)]=badd.count(twoway[0,i])
-    #newlist[i]=str(bignumlist[i])+letlist[i]
-6
-newlist.sort(reverse=True)
-print(newlist)
-
-
-#s=sorted(student_tuples, key=itemgetter(1))  #first by name
-#unfortunately what this is doing is appending the first result to the second
-#instead of resorting
-#s=sorted(twoway,key=itemgetter(0))  #secondary first col 0
-#s=sorted(s, key=itemgetter(2), reverse=True)  #primary second- age
-
-#s=(s,sorted(s, key=itemgetter(1), reverse=True))  #then by grade
-#print(s)
-
-
-#s = sorted(student_objects, key=attrgetter('age'))     
-#sorted(s, key=attrgetter('grade'), reverse=True) 
-
-#print(twoway)
-"""
