@@ -37,22 +37,33 @@ Notice about this example:
 * Letters that do not occur in the text are not listed in the output at all.
 """
 import re
+import operator
 
+#stripping string down to only lower case letters
 badd=input("enter string")
 badd=(badd.lower())
 badd=re.sub('[^ a-zA-Z]', '', badd)
 badd=badd.replace(" ", "")
 
+
 letlist=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 letters={c:0 for c in letlist}
 
+#put amount of each letter into a dictionary
 for i in badd:
     letters[i]+=1
-print(letters)
 
 
-    
-for key, value in letters.items() :
+#turn dictionary into a list so it can be sorted
+let = sorted(letters.items(), key=operator.itemgetter(1),reverse=True)
+
+
+#turn the sorted list back into a dictionary
+d = dict(let)
+
+
+
+for key, value in d.items() :
     if value>0:
         fin = key * value
         print(fin)
