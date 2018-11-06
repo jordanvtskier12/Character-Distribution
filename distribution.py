@@ -36,11 +36,13 @@ Notice about this example:
   in the text and they are listed in the output in alphabetical order.
 * Letters that do not occur in the text are not listed in the output at all.
 """
-from operator import itemgetter, attrgetter
+import re
 
 badd=input("enter string")
 badd=(badd.lower())
-#print(badd)
+badd=re.sub('[^ a-zA-Z]', '', badd)
+badd=badd.replace(" ", "")
+
 letlist=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 letters={c:0 for c in letlist}
 
@@ -48,8 +50,9 @@ for i in badd:
     letters[i]+=1
 print(letters)
 
-for i in letters:
-    print(letlist[0])
-    del letlist[0]
 
+    
+for key, value in letters.items() :
+    fin = key * value
+    print(fin)
 
