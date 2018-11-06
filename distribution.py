@@ -53,6 +53,7 @@ print(letters)
 
     
 for key, value in letters.items() :
-    fin = key * value
-    print(fin)
+    if value>0:
+        fin = key * value
+        print(fin)
 
