@@ -1,7 +1,7 @@
 """
 distribution.py
 Author: Jordan Gottlieb
-Credit: lots-o-google
+Credit: 
 
 Assignment:
 
@@ -56,7 +56,6 @@ for i in badd3:
 
 #turn dictionary into a list so it can be sorted
 let = sorted(letters.items(), key=operator.itemgetter(1),reverse=True)
-
 
 #turn the sorted list back into a dictionary
 d = dict(let)
